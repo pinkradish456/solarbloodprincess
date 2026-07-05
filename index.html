@@ -99,19 +99,15 @@
     </dialog>
     
     <script>
-        const audio = document.getElementById('bgMusic');
-        const enterBtn = document.getElementById('enter-btn');
+       
+  document.getElementById('enter-btn').addEventListener('click', () => {
+    // 1. On stocke l'intention de jouer la musique dans le navigateur
+    localStorage.setItem('playMusic', 'true');
+    
+    // 2. On redirige vers la page principale
+    window.location.href = 'homepage.html';
+  });
 
-        enterBtn.addEventListener('click', () => {
-            // Play audio first
-            audio.play().then(() => {
-                // Navigate to the target page only after the audio initiates
-                window.location.href = 'homepage.html';
-            }).catch(error => {
-                console.error("Playback failed:", error);
-            });
-        });
- 
 </script>
     
   
