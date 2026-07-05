@@ -115,6 +115,24 @@
 });
 
     </script>
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+    // Vérifie si l'utilisateur vient de la splash page
+    if (localStorage.getItem('playMusic') === 'true') {
+        const audio = new Audio('votre-musique.mp3');
+        audio.loop = true;
+
+        // Attend le premier clic n'importe où sur la page d'accueil
+        document.body.addEventListener('click', () => {
+            audio.play().then(() => {
+                // Nettoie le stockage pour éviter de relancer au prochain rafraîchissement
+                localStorage.removeItem('playMusic');
+            }).catch(e => console.log("Autoplay bloqué par le navigateur"));
+        }, { once: true }); // 'once: true' supprime l'écouteur après le premier clic
+    }
+});
+
+	</script>
 
 	</script>
 </body>
