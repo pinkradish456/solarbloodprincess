@@ -6,20 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinkradish's place ｡⋆｡˚ ʚɞ ˚｡⋆｡</title>
     <style>
-      html,body {
+		 html,body {
            background-image:url("https://solarbloodprincess.vercel.app/images/piano.jpg");
            background-blend-mode:multiply;
            background-color:rgba(0, 0, 0, 0.6);
            background-size:cover;
-		   min-width:100vw;min-height:100vh;
-		  
+           background-repeat:no-repeat;
+           margin:0;
+           padding:0;
+           overflow:hidden !important;
            
         }
+        
+        body{display:flex;gap:100px;padding:20px;min-width:100vw !important;min-height:100vh !important; overflow-x:auto !important;}
+         
+       .page {min-width:30%;min-height:70%;border:1px dashed white; background-color:rgba(0, 0, 0, 1);padding:10px 15px;margin-top:5px; animation:float 3s ease-in-out infinite } @keyframes float {
+       	0% {transform:translateY(0px);}
+       	50% {transform:translateY(-20px);}
+       	100%{transform:translateY(0px);}
+       }
 
 		.sticker {width:200px;height:auto;}
-        
-        body{display:flex;gap:100px;padding:100px;}
-        
+    
         h1, h2, h3, p, a, ul li { color:white;	font-family:serif,'Georgia';}
 		ul {display:flex;flex-direction:column-reverse;}
         
@@ -33,12 +41,6 @@
         
         h1, h2, h3 {text-align:center;}
          
-       .page {min-width:30%;min-height:70%;overflow-x:auto;border:1px dashed white; background-color:rgba(0, 0, 0, 1);padding:10px 15px;margin-top:5px;margin-left:5px;animation:float 3s ease-in-out infinite } @keyframes float {
-       	0% {transform:translateY(0px);}
-       	50% {transform:translateY(-20px);}
-       	100%{transform:translateY(0px);}
-       }
-       
    
     </style>
     
