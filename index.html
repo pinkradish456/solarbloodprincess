@@ -25,7 +25,7 @@
         h1, h2, h3, p, a { color:white;	font-family:serif,'Georgia';}
         
         p,a {font-size:1.1rem; }
-        
+        a {color:indianred;}
         h1 {font-size:3.4rem; }
         
         h2 {font-size:2.4rem;}
@@ -59,6 +59,11 @@
 	
 	<div class="page">
 		<h1>About</h1>
+		<p>Go to my FriendRewind profile. There's basically everything you need to know about me. Link if you are too lazy : <a href="https://friendrewind.com/pinkradish456">@pinkradish456</a></p>
+		<h2>Books</h2>
+		<ul id="book-list">
+			<li>Loading books...</li>
+		</ul>
 	</div>
     
     <div class="page">
@@ -76,5 +81,31 @@
     <div class="page">
     	<h1>page3</h1>
     </div>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+    const bookList = document.getElementById("book-list");
+
+    // Fetch the JSON file
+    fetch('books.json')
+        .then(response => response.json())
+        .then(data => {
+            // Clear the "Loading book..." text
+            bookList.innerHTML = '';
+
+            // Loop through each book and create a list item
+            data.forEach(book => {
+                const li = document.createElement('li');
+                li.textContent = `${book.title} - status : ${book.status}`;
+                bookList.appendChild(li);
+            });
+        })
+        .catch(error => {
+            console.error('Error loading books:', error);
+            bookList.innerHTML = '<li>Failed to load books.</li>';
+        });
+});
+
+	</script>
 </body>
 </html>
