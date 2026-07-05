@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.27">
+    <title>Solar Blood Princess ⋆˚ʚɞ</title>
+     <link rel="icon" type="image/gif" href="https://solarbloodprincess.neocities.org/images/disc.gif">
+    <style>
+      html, body {
+        color:white;
+        margin:0;
+        padding:0;
+        background-image:url("https://solarbloodprincess.vercel.app/images/piano.jpg");
+        background-blend-mode:multiply;
+        background-color:rgba(0, 0, 0, 0.7);
+        background-size:cover;
+        overflow:hidden;
+      
+
+      }
+      
+      body {
+      
+        font-family:'Courier New', Courier, monospace;
+        font-size:16px;
+        
+       
+      }
+      
+     
+      dialog {
+        width:55vw;
+        min-height:35vh;
+        padding:10px 15px;
+        font-size:1.3rem;
+        background-color:rgba(0, 0, 0, 0.6);
+        align-items:center;
+        display:flex;
+        flex-direction:column;
+        margin:70px auto;
+         animation: float 3s ease-in-out infinite;
+}
+
+/* Define the up and down movement */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px); /* Moves up 20px at the halfway mark */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+
+        
+        
+      }
+      
+      button {
+        padding:10px 15px;
+        font-size:0.98rem;
+        text-align:center;
+        background-color:white;
+        color:black;
+      
+        
+      }
+      
+      button:hover{
+        background-color:grey;
+        font-style:italic;
+      }
+      
+      .head {
+       color:white;
+        padding:10px 15px;
+        
+     
+      }
+      
+      p{
+        color:white;
+      }
+      
+    </style>
+    
+  </head>
+  <body>
+    <dialog>
+      <div class="head">
+        <span>Welcome !</span>
+        </div>
+      <p><b style="text-decoration:underline;">CW : </b>Javascript and iframe were used to make this website.</p><p>Only works on desktop. Lots of stickers, wait for them to load.</p>
+      <p> Autoplaying music. This website is likely to contain disturbing imagery soon.</p>
+      <p>Proceed at your own risk.</p>
+      <button id="enter-btn">enter</button>
+    </dialog>
+    
+    <script>
+  document.getElementById('enter-btn').addEventListener('click', () => {
+    // 1. On stocke l'intention de jouer la musique dans le navigateur
+    localStorage.setItem('playMusic', 'true');
+    
+    // 2. On redirige vers la page principale
+    window.location.href='homepage.html';
+  });
+</script>
+    
+  
+</body></html>
