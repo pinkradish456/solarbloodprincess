@@ -89,22 +89,20 @@
 	document.addEventListener("DOMContentLoaded", () => {
     const bookList = document.getElementById("book-list");
 
-    fetch('books.json')
-        .then(response => response.json())
-        .then(data => {
-            bookList.innerHTML = ''; // Vide le "Loading book..."
+    // Vos données JSON directement intégrées ici
+    const data = [
+        { "title": "Asleep", "status": "in progress..." }
+    ];
 
-            data.forEach(book => {
-                const li = document.createElement('li');
-                // Utilisation de book.status à la place de book.author
-                li.textContent = `${book.title} — Status : ${book.status}`;
-                bookList.appendChild(li);
-            });
-        })
-        .catch(error => {
-            console.error('Erreur :', error);
-            bookList.innerHTML = '<li>Failed to lead, try again later.</li>';
-        });
+    // Efface le message de chargement
+    bookList.innerHTML = '';
+
+    // Affiche la liste
+    data.forEach(book => {
+        const li = document.createElement('li');
+        li.textContent = `${book.title} — Statut : ${book.status}`;
+        bookList.appendChild(li);
+    });
 });
 
 	</script>
