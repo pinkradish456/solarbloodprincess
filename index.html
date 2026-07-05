@@ -99,7 +99,7 @@
             // Loop through each book and create a list item
             data.forEach(book => {
                 const li = document.createElement('li');
-                li.textContent = `${book.title} - status : ${book.status}`;
+                li.textContent = `${book.title}, status : ${book.status}`;
                 bookList.appendChild(li);
             });
         })
