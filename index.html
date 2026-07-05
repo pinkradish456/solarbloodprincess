@@ -86,23 +86,29 @@
 
 	<script>
 	document.addEventListener("DOMContentLoaded", () => {
-    const bookList = document.getElementById("books");
+            const bookList = document.getElementById("books");
 
-    // Vos données JSON directement intégrées ici
-    const data = [
-        { "title": "Asleep", "status": "in progress..." }
-    ];
+            // Vos données intégrées
+            const data = [
+                { "title": "Asleep", "status": "in progress..." }
+            ];
 
-    // Efface le message de chargement
-    bookList.innerHTML = '';
+            // On vérifie que la liste existe bien pour éviter les plantages
+            if (bookList) {
+                // Efface le message "Loading books..."
+                bookList.innerHTML = '';
 
-    // Affiche la liste
-    data.forEach(book => {
-        const li = document.createElement('li');
-        li.textContent = `${book.title} — Statut : ${book.status}`;
-        bookList.appendChild(li);
-    });
-});
+                // Affiche le livre
+                data.forEach(book => {
+                    const li = document.createElement('li');
+                    li.textContent = `${book.title} — Statut : ${book.status}`;
+                    bookList.appendChild(li);
+                });
+            } else {
+                console.error("L'élément avec l'ID 'books' n'a pas été trouvé dans le HTML.");
+            }
+        });
+    </script>
 
 	</script>
 </body>
