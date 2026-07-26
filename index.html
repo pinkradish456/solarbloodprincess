@@ -20,11 +20,16 @@
             margin:0 !important;
             padding:200px !important;
         }
-        
+              
  li,p,span,h1,h2,h3,h4,h5,h6 {
             color:black;
             font-family:"courier", courier new, monospace;
        }
+
+         a {
+            font-weight:bold;
+            color:white;
+        }
 
         h1 {
             font-size:3.6rem;
@@ -73,22 +78,11 @@
             width:600px;
             height:500px;
         }
-        .content {
-    display:flex;
-    gap:10px;
-    margin:0 auto !important;
-    padding:5px;
-       }
       
       
         button {
             background:gray;
             padding:5px;
-        }
-
-        a {
-            font-weight:bold;
-            color:white;
         }
         
         footer {
@@ -101,7 +95,7 @@
     </style>   
   </head>
   <body>
-       <div class="content">
+      
            <h2>Quel actoin voulez-vous effectuer ?</h2>
            <form id="formulaire-recherche">
            <input type="search" placeholder="écrire votre réponse..." id="rechercheLiens">
@@ -120,7 +114,7 @@
         <footer>
             <a href="https://solarbloodprincess.neocities.org/homepage">Autre site web intéressant</a>
         </footer>  
-       </div>
+      
 
       <script>
           const formulaire = document.getElementById('formulaire-recherche');
