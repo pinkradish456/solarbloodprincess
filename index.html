@@ -107,7 +107,8 @@
       
            <h2>Quel actoin voulez-vous effectuer ?</h2>
            <form id="formulaire-recherche">
-           <input type="text" placeholder="écrire votre réponse..." id="rechercheLiens">
+          <input type="url" id="navigateur-url" placeholder="Entrez une URL (ex: https://google.com)...">
+
            <button type="submit">OK</button>
         </form>
            <main>
@@ -126,30 +127,35 @@
       
 
       <script>
-          const formulaire = document.getElementById('formulaire-recherche');
-const champSaisie = document.getElementById('rechercheLiens');
+  const inputUrl = document.getElementById('navigateur-url');
 
-formulaire.addEventListener('submit', (event) => {
-  // 1. Empêcher le rechargement automatique de la page
-  event.preventDefault(); 
+inputUrl.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
 
-  const texteSaisi = champSaisie.value.trim();
-  const urlActuelle = new URL(window.location.href);
+    let saisie = inputUrl.value.trim();
 
-  if (texteSaisi !== "") {
-    urlActuelle.searchParams.set('search', texteSaisi);
-  } else {
-    urlActuelle.searchParams.delete('search');
+    // Si le champ est vide, on ne fait rien
+    if (!saisie) return;
+
+    // Astuce de sécurité/confort : ajoute le protocole si l'utilisateur l'oublie
+    if (!saisie.startsWith('http://') && !saisie.startsWith('https://')) {
+      saisie = 'https://' + saisie;
+    }
+
+    try {
+      // Valide que l'URL finale est correctement construite avant de rediriger
+      new URL(saisie);
+      
+      // Remplace l'URL et charge la nouvelle page immédiatement
+      window.location.href = saisie;
+      
+    } catch (erreur) {
+      alert("L'URL saisie n'est pas valide. Veuillez réessayer.");
+    }
   }
-
-  // 2. Ajouter une NOUVELLE étape dans l'historique (pushState) 
-  // L'utilisateur pourra ainsi utiliser le bouton "Retour" du navigateur
-  window.history.pushState({}, '', urlActuelle.toString());
-
-  console.log(`Recherche validée et enregistrée : ${texteSaisi}`);
-  
-chercherLien()
 });
+
 
       </script>
 </body>
