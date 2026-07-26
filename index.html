@@ -98,7 +98,7 @@
       
            <h2>Quel actoin voulez-vous effectuer ?</h2>
            <form id="formulaire-recherche">
-           <input type="search" placeholder="écrire votre réponse..." id="rechercheLiens">
+           <input type="url" placeholder="écrire votre réponse..." id="rechercheLiens">
            <button type="submit">OK</button>
         </form>
            <main>
@@ -118,7 +118,7 @@
 
       <script>
           const formulaire = document.getElementById('formulaire-recherche');
-const champSaisie = document.getElementById('champ-saisie');
+const champSaisie = document.getElementById('rechercheLiens');
 
 formulaire.addEventListener('submit', (event) => {
   // 1. Empêcher le rechargement automatique de la page
