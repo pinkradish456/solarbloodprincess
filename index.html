@@ -1,114 +1,153 @@
 <!DOCTYPE html>
 <html><head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.27">
-    <title>Solar Blood Princess ⋆˚ʚɞ</title>
-     <link rel="icon" type="image/gif" href="https://solarbloodprincess.neocities.org/images/disc.gif">
+    <title>Hello ? ⋆˚ʚɞ</title>
     <style>
-      html, body {
-        color:white;
-        margin:0;
-        padding:0;
-        background-image:url("https://solarbloodprincess.vercel.app/images/piano.jpg");
-        background-blend-mode:multiply;
-        background-color:rgba(0, 0, 0, 0.7);
-        background-size:cover;
-        overflow:hidden;
-      
+      html {
+            background:black;
+          margin:0;
+          padding:0;  
+        }
 
-      }
-      
-      body {
-      
-        font-family:'Courier New', Courier, monospace;
-        font-size:16px;
+        body {
+            background-image:url("https://file.garden/alYdvfhXNQXOj7rJ/pexels-haugsveenphoto-1361215.jpg");
+            background-attachment:fixed !important;
+            background-size:cover;
+            background-position:center center;
+            background-repeat:no-repeat;
+            margin:0 !important;
+            padding:200px !important;
+        }
         
-       
-      }
-      
-     
-      dialog {
-        width:55vw;
-        min-height:35vh;
-        padding:10px 15px;
-        font-size:1.3rem;
-        background-color:rgba(0, 0, 0, 0.6);
-        align-items:center;
-        display:flex;
-        flex-direction:column;
-        margin:70px auto;
-         animation: float 3s ease-in-out infinite;
-}
+ li,p,span,h1,h2,h3,h4,h5,h6 {
+            color:black;
+            font-family:"courier", courier new, monospace;
+       }
 
-/* Define the up and down movement */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px); /* Moves up 20px at the halfway mark */
-  }
-  100% {
-    transform: translateY(0px);
-  }
+        h1 {
+            font-size:3.6rem;
+            text-align:center;
+        }
 
+        h2 {
+            font-size:3.1rem;
+            text-align:center;
+        }
+
+    h3 {
+        font-size:2.7rem;
+    }
+        h4 {
+            font-size:2.4rem;
+        }
+
+    h5 {
+        font-size:2.2rem;
+    }
+        h6 {
+            font-size:1.9rem;
+        }
+
+        a,p,span {
+            font-size:0.98rem;
+            letter-spacing:0.1rem;
+        }
+
+          placeholder {
+  color: #888888;
+  opacity: 1;
+  font-style: italic;
+        }
         
+          input {
+            width:15px;
+            padding:5px;
+        }
+
+        main {
+            text-align:center;
+            border:1px solid black;
+            padding:10px 15px;
+            width:600px;
+            height:500px;
+        }
+        .content {
+    display:flex;
+    gap:10px;
+    margin:0 auto !important;
+    padding:5px;
+       }
+      
+      
+        button {
+            background:gray;
+            padding:5px;
+        }
+
+        a {
+            font-weight:bold;
+            color:white;
+        }
         
-      }
+        footer {
+            text-align:center;
+            background:black;
+            padding:10px 15px;
+            margin:0 auto !important;
+        }
       
-     #enter-btn {
-        padding:10px 15px;
-        font-size:0.98rem;
-        text-align:center;
-        background-color:white;
-        color:black;
-      
-        
-      }
-      
-      button:hover{
-        background-color:grey;
-        font-style:italic;
-      }
-      
-      .head {
-       color:white;
-        padding:10px 15px;
-        
-     
-      }
-      
-      p{
-        color:white;
-      }
-      
-    </style>
-    
+    </style>   
   </head>
   <body>
-        <audio id="bgMusic" src="your-music-file.mp3" loop></audio>
+       <div class="content">
+           <h2>Quel actoin voulez-vous effectuer ?</h2>
+           <form id="formulaire-recherche">
+           <input type="search" placeholder="écrire votre réponse..." id="rechercheLiens">
+           <button type="submit">OK</button>
+        </form>
+           <main>
+              <h3>Liste de choses que vous pouvez chercher</h3>
+               <ul>
+                   <li>La page d'accueil</li>
+                   <li>encore indisponible</li>
+                   <li>encore indisponible</li>
+                   <li>encore indisponible</li>
+               </ul>
+           </main>
 
-    <dialog>
-      <div class="head">
-        <span>Welcome !</span>
-        </div>
-      <p><b style="text-decoration:underline;">CW : </b>Javascript and iframe were used to make this website.</p><p>Only works on desktop. Lots of stickers, wait for them to load.</p>
-      <p> Autoplaying music. This website is likely to contain disturbing imagery soon.</p>
-      <p>Proceed at your own risk.</p>
-      <button id="enter-btn">enter</button>
-    </dialog>
-    
-    <script>
-       
-  document.getElementById('enter-btn').addEventListener('click', () => {
-    // 1. On stocke l'intention de jouer la musique dans le navigateur
-    localStorage.setItem('playMusic', 'true');
-    
-    // 2. On redirige vers la page principale
-    window.location.href = 'homepage.html';
-  });
+        <footer>
+            <a href="https://solarbloodprincess.neocities.org/homepage">Autre site web intéressant</a>
+        </footer>  
+       </div>
 
-</script>
-    
+      <script>
+          const formulaire = document.getElementById('formulaire-recherche');
+const champSaisie = document.getElementById('champ-saisie');
+
+formulaire.addEventListener('submit', (event) => {
+  // 1. Empêcher le rechargement automatique de la page
+  event.preventDefault(); 
+
+  const texteSaisi = champSaisie.value.trim();
+  const urlActuelle = new URL(window.location.href);
+
+  if (texteSaisi !== "") {
+    urlActuelle.searchParams.set('search', texteSaisi);
+  } else {
+    urlActuelle.searchParams.delete('search');
+  }
+
+  // 2. Ajouter une NOUVELLE étape dans l'historique (pushState) 
+  // L'utilisateur pourra ainsi utiliser le bouton "Retour" du navigateur
+  window.history.pushState({}, '', urlActuelle.toString());
+
+  console.log(`Recherche validée et enregistrée : ${texteSaisi}`);
   
-</body></html>
+  // Appelez votre fonction pour charger les résultats ici (ex: filtrerArticles())
+});
+
+      </script>
+</body>
+</html>
